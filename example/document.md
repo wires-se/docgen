@@ -2,10 +2,10 @@
 document:
   name: Sample Technical Document
   prepared: Joachim Wiberg
-  organisation: Addiva Elektronik AB
+  organisation: MoreWires AB
   approved:
 copyright:
-  year: 1974-2022
+  year: 1974-2025
 numbersections: true
 classoption: twoside
 fontsize: 11pt
@@ -29,9 +29,9 @@ __________________        ____________________________________________
                   |      |dwb
 ```
 
-Addiva Elektronik have released this project as *Open Source* to invite
-others in need of a similar framework to share and further improve on
-the founding ideas.
+Wires have released this project as *Open Source* to invite other users
+in need of a similar framework to share and further improve on the
+founding ideas.
 
 ```{.C .numberLines caption="This is the classic Hello World program in C"}
 #include <stdio.h>
