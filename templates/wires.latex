@@ -615,7 +615,7 @@ $endif$
 $if(document.organisation)$
 \newcommand{\companyname}{$document.organisation$}
 $else$
-\newcommand{\companyname}{Addiva Elektronik AB}
+\newcommand{\companyname}{MoreWires AB}
 $endif$
 \newcommand{\companylogo}{$data-dir$/templates/logo.pdf}
 
