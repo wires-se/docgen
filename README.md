@@ -21,9 +21,9 @@ This document system for generating PDF and HTML files from [Markdown][]
 text is based on [Pandoc][].  Inspiration for the templates comes from a
 LaTeX package created back in 2001, called [technics.sty][].
 
-Addiva Elektronik have released this project as Open Source to invite
-others in need of a similar framework to share and further improve on
-the founding ideas.
+Wires have released this project as *Open Source* to invite other users
+in need of a similar framework to share and further improve on the
+founding ideas.
 
 [Pandoc]:       https://pandoc.org/
 [Markdown]:     https://daringfireball.net/projects/markdown/syntax

@@ -5,7 +5,7 @@ document:
   organisation: MoreWires AB
   approved:
 copyright:
-  year: 1974-2025
+year: 2022-2025
 numbersections: true
 classoption: twoside
 fontsize: 11pt
