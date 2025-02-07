@@ -13,16 +13,24 @@ $endif$
 $if(keywords)$
   <meta name="keywords" content="$for(keywords)$$keywords$$sep$, $endfor$" />
 $endif$
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Pacifico&display=swap" rel="stylesheet">
   <title>$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$</title>
   <style>
-    $styles.html()$
-/*
- * Google Fonts don't carry old-style numerals for most (any?) type faces.
- * It seems to be a well-documented decision to default to lining numerals
- * https://github.com/google/fonts/issues/1780
- */
-body {
-    background-color:#f1f1f1;
+    /*
+     *  $styles.html()$  <-- Skip all partials, because they severely mess up
+     *                       formatting of both plain html output and print
+     *                       media.  For more information in partials, see
+     *                       https://pandoc.org/chunkedhtml-demo/6.1-template-syntax.html
+     */
+    /*
+     * Google Fonts don't carry old-style numerals for most (any?) type faces.
+     * It seems to be a well-documented decision to default to lining numerals
+     * https://github.com/google/fonts/issues/1780
+     */
+    body {
+    /* background-color:#f1f1f1; */
     font-family: Noto Serif, serif;
     font-weight: 300;
     font-size: 100%;     /* flexible baseline */
@@ -86,7 +94,7 @@ pre {
     overflow: auto;
     overflow-y: hidden;
     font-size: 12px;
-    line-height: 20px;
+    line-height: 1.2em;
     border: 1px solid #777;
     background: #f5f5f5; /* url(lines.png) repeat 0 0; */
 }
@@ -133,7 +141,6 @@ dl.config dd {
 
 .noborder {
     border: none;
-    border-bottom: none;
 }
 
 .hide {
@@ -152,7 +159,6 @@ table {
 }
 
 table, th, td {
-    border: 1px solid #dfe2e5;
     border-collapse: collapse;
     padding: 3px 13px;
 }
@@ -163,7 +169,7 @@ td {
     vertical-align: bottom;
 }
 th, td {
-    border-bottom: 1px solid #ddd;
+    border: 1px solid #ddd;
 }
 
 tr:nth-child(even) {
@@ -184,8 +190,8 @@ a:hover {
 }
 
 .page-header, .page-header-space {
-    height: 122px;
-    margin-bottom: 1em;
+    height: 170px;
+    margin-bottom: 0.5em;
 }
 
 .page-footer, .page-footer-space {
@@ -197,8 +203,8 @@ a:hover {
 }
 
 .heading {
-    width: 99.6%;
-    margin-left: 1px;
+    width: 97%;
+    margin-left: 10px;
     text-align: left;
     background-color: #ffffff;
 }
@@ -206,6 +212,10 @@ a:hover {
 .top {
     vertical-align: top;
     background: #ffffff;
+}
+
+tbody {
+    border-top: none;
 }
 
 table.heading tr th td {
@@ -228,13 +238,14 @@ div.small {
 
 .heading td.logo {
     width: 40%;
-    height: 50px;
+    height: 45px;
     background-image:    url(logo.png);
     background-position: left 0px;
     background-repeat:   no-repeat;
     /* background-size:     contain; */
-    background-size: auto 65px;
+    background-size: auto 50px;
 }
+
 
 /* Based on ideas from https://medium.com/@Idan_Co/the-ultimate-print-html-template-with-header-footer-568f415f6d2a */
 @media print {
@@ -253,7 +264,7 @@ div.small {
 	size: auto;   /* auto is the initial value */
 
 	/* this affects the margin in the printer settings */
-	margin: 10mm 10mm 10mm 10mm;
+      /* margin: 10mm 10mm 10mm 10mm; */
     }
 
     .hide {
@@ -311,7 +322,7 @@ div.small {
 	/* page-break-after: always; */
 	background-position: 50% 50%;
 	/* padding-top: 500px; */
-	font-size: 3em;
+      /* font-size: 3em; */
 
 	display: block;
 	counter-reset: h2counter;
@@ -438,7 +449,7 @@ div.small {
 
 @media screen and (min-width: 920px) {
     body {
-	background-color: #f1f1f1;
+      /* background-color: #f1f1f1; */
     }
 
     .sidebar {
@@ -580,19 +591,19 @@ $endif$
 $endif$
 </div>
 <div class="wrapper">
-  <table class="noborder">
+  <table style="margin:0px;">
     <thead>
       <tr class="noborder">
-        <td class="noborder">
+        <td class="noborder" style="padding:0px;">
 	  <div class="page-header" style="text-align: center">
-	    <table class="heading noborder">
+	    <table class="heading">
 	      <colgroup>
-		<col span="1" style="width: 30%;">
-		<col span="1" style="width: 15%;">
-		<col span="1" style="width: 55%;">
+		<col span="1" style="width: 25%;">
+		<col span="1" style="width: 16%;">
+		<col span="1" style="width: 54%;">
 	      </colgroup>
 	      <tbody>
-	      <tr class="noborder">
+	      <tr>
 		<td class="logo noborder">&nbsp;</td>
 $for(document)$
 		<td class="noborder" colspan="2">
@@ -667,29 +678,6 @@ $endfor$
 	</td>
       </tr>
     </tbody>
-
-    <tfoot>
-      <tr class="noborder">
-        <td class="noborder">
-$if(copyright)$
-	  <div class="page-footer">
-$if(copyright.holder)$
-$if(copyright.year)$
-	    Copyright &copy;$copyright.year$&nbsp;$copyright.holder$
-$else$
-	    Copyright &copy;$year$&nbsp;$copyright.holder$
-$endif$
-$else$
-	    $copyright$
-$endif$
-	  </div>
-$else$
-          <div class="page-footer-space hide"></div>
-$endif$
-	  <div id="page-number"></div>
-        </td>
-      </tr>
-    </tfoot>
   </table>
 </div>
 </body>
