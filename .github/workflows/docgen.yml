@@ -9,7 +9,7 @@ on:
       - '**'
 
 env:
-  ARCHIVE: ael-docgen-latest
+  ARCHIVE: docgen-latest
 
 jobs:
   docgen:
@@ -42,4 +42,4 @@ jobs:
           tag: latest
           rm: true
           token: ${{ secrets.GITHUB_TOKEN }}
-          files: ael*.zip*
+          files: *.zip
