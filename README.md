@@ -45,7 +45,7 @@ Notice how the HTML version has two click buttons on the right-hand side
 just below the header.  One for opening the PDF version (better for
 print) and one for opening the HTML print preview in your browser.  Be
 aware that CSS `media print` still is very broken in most browsers.  Any
-help improving `templates/addiva.html` CSS to be able to handle or trick
+help improving `templates/wires.html` CSS to be able to handle or trick
 browsers better, is most welcome!
 
 
@@ -57,7 +57,7 @@ Usage
     subdirectory `doc/`:
 
 	    cd doc/
-		git submodule add git@github.com:addiva-elektronik/docgen.git
+		git submodule add git@github.com:wires-se/docgen.git
 		ln -s docgen/Makefile .
 
 That's it.  Provided you have read the Requirements section, you can
@@ -97,8 +97,8 @@ generates a HTML and PDF version in the `output/` subdirectory using
      |          |-- memo-2022-08-01.html
      |          `-- memo-2022-08-01.pdf
      |-- templates/
-     |    |-- addiva.html
-     |    `-- addiva.pdf
+     |    |-- wires.html
+     |    `-- wires.pdf
      |-- Makefile
      `-- server.sh
 
@@ -111,7 +111,7 @@ Frontmatter
 
 Standard [Pandoc variables](https://pandoc.org/MANUAL.html#variables)
 are supported in the (optional) Yaml frontmatter.  However, to enable
-the Addiva specific document header variants a couple of extra variables
+the Wires specific document header variants a couple of extra variables
 have been addded.  These are described in this section.
 
 Here is an example of a YAML frontmatter, which goes at the very top of
@@ -125,10 +125,10 @@ Notice the starting and closing `---` of the frontmatter:
 document:
   name: Sample Technical Document
   prepared: Joachim Wiberg
-  organisation: Addiva Elektronik AB
+  organisation: MoreWires AB
   approved:
 copyright:
-  holder: Addiva Elektronik AB
+  holder: MoreWires AB
 numbersections: true
 classoption: twoside
 fontsize: 11pt
@@ -157,8 +157,8 @@ monofontoptions: Scale=0.75
    fall back to the default by setting either of the following options:
    * `year:` sets the optional copyright years field, e.g., "2021-2022",
      default: automatically sets current year
-   * `holder`: defaults to the organisation (above), or "Addiva
-     Elektronik AB" if organisation is unset
+   * `holder`: defaults to the organisation (above), or "MoreWires AB"
+     if organisation is unset
  * `numbersections`: optional, if set to `true` the PDF will used
    numbered sections (this is what most readers expect)
  * `classoption`: optional, used for PDF generation (LaTeX class option)
