@@ -15,7 +15,7 @@ args    += --resource-path $(shell dirname $<) -V data-dir="$(docgen)" -V gitrev
 args    += -V gitversion="$(gitver)" -V date="$(gitdate)" -V today="$(shell date --iso)" -V year=$(shell date +'%Y')
 
 html-args = -t html $(args)
-pdf-args  = -t pdf  $(args) --pdf-engine=xelatex --listings
+pdf-args  = -t pdf  $(args) --pdf-engine=xelatex
 
 ifdef V
 pdf-args += --verbose
