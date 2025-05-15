@@ -44,8 +44,8 @@ int main(void)
 ```
 
 The rest of this document serves as an **example** of Markdown syntax.
-Most of the contents is taken verbatim from, or derived fromm the Pandoc
-manual file [MANUAL.TXT][].
+Most of the contents is taken `verbatim` from, or derived from the
+Pandoc manual file [MANUAL.TXT][].
 
  - <https://pandoc.org/MANUAL.html#pandocs-markdown>
 
@@ -199,7 +199,7 @@ Thus, for example, the following headings will all be assigned the identifier
     My other heading   {#foo}
     ---------------
 
-(This syntax is compatible with [PHP Markdown Extra].)
+(This syntax is compatible with [PHP Markdown Extra][PHPME].)
 
 Note that although this syntax allows assignment of classes and key/value
 attributes, writers generally don't use all of this information.  Identifiers,
