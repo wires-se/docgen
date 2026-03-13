@@ -610,6 +610,7 @@ $if(document.approved)$
 \newcommand{\approvedby}{$document.approved$}
 $else$
 \newcommand{\approvedby}{}
+\usepackage[text=DRAFT,color=red!15,angle=45,fontsize=6cm]{draftwatermark}
 $endif$
 
 $if(document.organisation)$
