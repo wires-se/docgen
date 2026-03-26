@@ -1,4 +1,4 @@
-.PHONY: all clean release preview serve
+.PHONY: all clean distclean preview serve
 
 srcs    := $(shell find . -mindepth 2 -path "./docgen/*.md" -o -name '[^.]*.md' -print | sort)
 objs    := $(srcs:.md=.html) $(srcs:.md=.pdf)
@@ -40,12 +40,6 @@ build: $(objs)
 			cp -vf $$img output/$$dir/$$igmp;		   \
 		done;							   \
 	done
-
-autobuild:
-	while inotifywait $(srcs); do $(MAKE) build; done
-
-upload: all
-	rsync -vr --delete output/ 172.21.104.40:/var/www/addiva/
 
 clean:
 	-$(RM) $(objs) head.html
