@@ -547,7 +547,7 @@ $endif$
 }
 \usepackage{graphicx}
 \usepackage{fancyhdr}
-\pagestyle{fancy}
+\pagestyle{fancyplain}
 
 % Font setting.
 %\usepackage{avant}
@@ -749,6 +749,17 @@ $endif$
 \tableofcontents
 }
 $endif$
+$endif$
+$if(abstract)$
+\bigskip
+\leftskip1cm\relax
+\rightskip1cm\relax
+
+\subsubsection*{\abstractname}
+$abstract$
+
+\leftskip0cm\relax
+\rightskip0cm\relax
 $endif$
 $if(lof)$
 \listoffigures
